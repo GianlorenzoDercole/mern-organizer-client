@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import TaskForm from '../TaskForm'
 export default function Home() {
     // tasks from the backend
     const [tasks, setTasks] = useState([])
-
+    // // controlled form state
+    // const [form, setForm] = useState({})
     useEffect(() => {
         const fetchTasks = async () => {
             try{
@@ -16,7 +18,26 @@ export default function Home() {
             }
         }
         fetchTasks()
-    }, [])
+    }, []) // get all tasks when the page loads
+
+    // submit handler function
+    const handleSubmit = async (e, form) => {
+        e.preventDefault()
+        // axios to POST a task using the form state
+        console.log('the form data is', form)
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/tasks`, form)
+
+            setTasks([...tasks, response.data])
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    // // from change handler function
+    // const handleFormChange = e => {
+
+    // }
+
     const taskLinks = tasks.map((task, idx) => {
         return (
             <div key={`tasklink${idx}`}>
@@ -26,7 +47,8 @@ export default function Home() {
     })
     return (
         <div>
-            i am the home component
+            <h1>create new task</h1>
+            <TaskForm submitHandler={handleSubmit} />
             {taskLinks}
         </div>
     )
