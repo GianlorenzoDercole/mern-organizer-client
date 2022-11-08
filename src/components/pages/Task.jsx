@@ -15,10 +15,21 @@ export default function Task() {
                 setTask(response.data)
             })
     }, [id])
+
+    const handleSubmit = (e, form, setForm) => {
+        e.preventDefault()
+        axios.put(`${process.env.REACT_APP_SERVER_URL}/tasks/${id}`, form)
+            .then(response => {
+                console.log(response.data)
+                setTask(response.data)
+                setShowForm(false)
+            })
+            .catch(console.warn)
+    }
     return (
         <div>
-            task hi component {id}
-            { showForm ? <TaskForm initialForm={task}/> : <TaskDetails task={task}/> }
+            
+            { showForm ? <TaskForm initialForm={task} submitHandler={handleSubmit}/> : <TaskDetails task={task}/> }
             <button onClick={() => setShowForm(!showForm)}>{showForm ? 'no' : 'edit'}</button>
         </div>
     )
