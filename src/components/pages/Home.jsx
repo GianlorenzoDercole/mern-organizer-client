@@ -54,7 +54,14 @@ export default function Home() {
     return (
         <div>
             <h1>create new task</h1>
-            <TaskForm submitHandler={handleSubmit} />
+            <TaskForm
+                submitHandler={handleSubmit}
+                initialForm={{
+                    item: '',
+                    description: '',
+                    time: 1
+                }}
+            />
             {taskLinks}
         </div>
     )

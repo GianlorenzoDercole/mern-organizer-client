@@ -3,12 +3,8 @@ import { useState } from 'react'
 
 
 
-export default function TaskForm({submitHandler}) {
-    const [form, setForm] = useState({
-        item: '',
-        description: '',
-        time: 1
-    })
+export default function TaskForm({submitHandler, initialForm}) {
+    const [form, setForm] = useState(initialForm)
     return (
         <form onSubmit={e => submitHandler(e, form, setForm)}>
 

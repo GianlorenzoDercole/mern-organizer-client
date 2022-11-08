@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import TaskDetails from '../TaskDetails'
+import TaskForm from '../TaskForm'
 export default function Task() {
     const [task, setTask] = useState({})
     const [showForm, setShowForm] = useState(false)
@@ -17,7 +18,7 @@ export default function Task() {
     return (
         <div>
             task hi component {id}
-            { showForm ? 'form' : <TaskDetails task={task}/> }
+            { showForm ? <TaskForm initialForm={task}/> : <TaskDetails task={task}/> }
             <button onClick={() => setShowForm(!showForm)}>{showForm ? 'no' : 'edit'}</button>
         </div>
     )
