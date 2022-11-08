@@ -10,7 +10,7 @@ export default function TaskForm({submitHandler}) {
         time: 1
     })
     return (
-        <form onSubmit={e => submitHandler(e, form)}>
+        <form onSubmit={e => submitHandler(e, form, setForm)}>
 
             <label htmlFor='item'>item : </label>
             <input

@@ -21,7 +21,7 @@ export default function Home() {
     }, []) // get all tasks when the page loads
 
     // submit handler function
-    const handleSubmit = async (e, form) => {
+    const handleSubmit = async (e, form, setForm) => {
         e.preventDefault()
         // axios to POST a task using the form state
         console.log('the form data is', form)
@@ -29,6 +29,12 @@ export default function Home() {
             const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/tasks`, form)
 
             setTasks([...tasks, response.data])
+
+            setForm({
+                item: '',
+                description: '',
+                time: 1
+            })
         } catch (err) {
             console.log(err)
         }
