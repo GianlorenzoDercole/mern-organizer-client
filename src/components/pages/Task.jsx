@@ -4,6 +4,7 @@ import axios from 'axios'
 import TaskDetails from '../TaskDetails'
 export default function Task() {
     const [task, setTask] = useState({})
+    const [showForm, setShowForm] = useState(false)
     const { id } = useParams()
 
     useEffect(() => {
@@ -16,7 +17,8 @@ export default function Task() {
     return (
         <div>
             task hi component {id}
-            <TaskDetails task={task}/>
+            { showForm ? 'form' : <TaskDetails task={task}/> }
+            <button onClick={() => setShowForm(!showForm)}>{showForm ? 'no' : 'edit'}</button>
         </div>
     )
 }
