@@ -36,10 +36,13 @@ export default function Task() {
     }
     return (
         <div>
-
+            { showForm ?  <h1>update your task</h1> : ''}
             { showForm ? <TaskForm initialForm={task} submitHandler={handleSubmit}/> : <TaskDetails task={task}/> }
-            <button onClick={() => setShowForm(!showForm)}>{showForm ? 'no' : 'edit'}</button>
-            {showForm ? <button onClick={handleDelete}>dleete</button> : ''}
+            <div>
+            <button onClick={() => setShowForm(!showForm)}>{showForm ? 'I like it the way is is' : 'edit'}</button>
+            </div>
+
+            {showForm ? <button onClick={handleDelete}>delete</button> : ''}
         </div>
     )
 }

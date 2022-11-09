@@ -1,9 +1,10 @@
 export default function TaskDetails({ task }) {
     return (
         <div>
-            <h2>Task: {task.item}</h2>
-            <h2>Description: {task.description}</h2>
-            <h2>This should take {task.time} hours</h2>
+            <h1>{task.item}</h1>
+            <h2>{task.description}</h2>
+            {task.time > 1 ? <h1>this should take {task.time} hours</h1> : <h1>this should take {task.time} hour</h1>}
+
         </div>
     )
 }

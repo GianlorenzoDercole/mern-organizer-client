@@ -8,7 +8,7 @@ export default function TaskForm({submitHandler, initialForm}) {
     return (
         <form onSubmit={e => submitHandler(e, form, setForm)}>
 
-            <label htmlFor='item'>item : </label>
+            <label htmlFor='item' className='inputLabel'>task  </label>
             <input
                 type='text'
                 id='name'
@@ -17,7 +17,7 @@ export default function TaskForm({submitHandler, initialForm}) {
                 }
             />
 
-            <label htmlFor='description'>description : </label>
+            <label htmlFor='description' className='inputLabel'> description </label>
             <input
                 type='text'
                 id='description'
@@ -26,7 +26,7 @@ export default function TaskForm({submitHandler, initialForm}) {
                 }
             />
 
-            <label htmlFor='time'>time : </label>
+            <label htmlFor='time' className='inputLabel'> hours </label>
             <input
                 type='number'
                 id='time'
@@ -34,7 +34,9 @@ export default function TaskForm({submitHandler, initialForm}) {
                 onChange={e => setForm({...form, time: e.target.value})
                 }
             />
-            <button type='submit'>update</button>
+            <div>
+                <button type='submit'>update</button>
+            </div>
         </form>
     )
 }
