@@ -1,3 +1,67 @@
+/* body {
+  margin: 100px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-color: #7FBCD2;
+}
+
+h1 {
+  font-size: 60px;
+  color: #FFEEAF;
+}
+a {
+  font-size: 30px;
+  text-decoration: none;
+  color: #FFEEAF
+}
+a:visited{
+  color: #FFEEAF;
+}
+h2 {
+  color: #FFEEAF;
+}
+
+button {
+  margin: 50px;
+  height: 50px;
+  width: 990px;
+  font-size: 30px;
+  background-color: #A5F1E9;
+  border: none;
+  color: #7FBCD2;
+  border-radius: 50px;
+}
+.inputLabel {
+  color: #FFEEAF;
+  font-size: 25px;
+  font-style: bold;
+}
+input {
+  border: none;
+  border-radius: 50px;
+  background-color: #A5F1E9;
+  color: #7FBCD2;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 25px;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+
+/* F8C4B4
+  E5EBB2
+  BCE29E
+*/
+
+/*////////////////// */
+/*///////////////// */
 
 body {
   margin: 100px;
@@ -31,11 +95,11 @@ button {
   height: 50px;
   width: 990px;
   font-size: 30px;
-  /* background-color: #A7D2CB;
-  color: white; */
+  background-color: #A7D2CB;
+  color: white;
   border: none;
-
   border-radius: 50px;
+  
 }
 .inputLabel {
 
@@ -43,10 +107,8 @@ button {
   font-style: bold;
 }
 input {
-
+  outline: none;
   border-radius: 50px;
-
-
   height: 40px;
   font-size: 20px;
   padding-left: 25px;
